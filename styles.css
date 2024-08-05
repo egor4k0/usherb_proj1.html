@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+html {
+    font-family:Montserrat',sans-serif';
+}
+
+body {
+    background-color: #140650;
+    background-size:cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.question {
+    margin-top: 50px;  
+  background-color: #fff;
+  outline: 2px solid #FEBF00;
+  outline-offset: 3px;
+    padding: 20px;
+    border-radius: 15px;
+    font-size: 35px;
+
+
+
+}
+
+.answers {
+    font-size: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    row-gap:0px;
+    column-gap:10px;
+    max-width: 430px; 
+    margin-top: 10px;
+    justify-content: center;
+}
+
+.answer {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background-color: #6c5ce7;
+    padding: 19px 60px;
+    font-size: 25px;
+    font-weight: 700;
+    color: #fff;
+    border-radius: 5px;
+    transition: all ease 0.1s;
+    box-shadow: 0px 5px 0px 0px #a29bfe;     
+}
+
+.answer:active {
+    transform: translateY(5px);
+    box-shadow: 0px 0px 0px 0px #a29bfe;
+}
+
+
+.result {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+.result h2 {
+    margin: 20px 0;
+}
+
+.restart-btn {
+    padding: 20px 30px;
+    font-size: 25px;
+    margin-top: 40px;
+    cursor: pointer;
+    border: none;
+    background-color: #6c5ce7;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 0px 5px 0px 0px #a29bfe;
+}
+
+.restart-btn:hover {
+    transform: translateY(5px);
+    background-color: #0056b3;
+    box-shadow: 0px 5px 0px 0px #0056b3;
+    transition: all ease 0.1s;
+}
+
+#timer,
+#score {
+    color: white;
+    background-color: #0056b3;
+    margin-top: 00px;
+    font-size: 25px;
+    margin-top:20px ;
+    margin-left: 20px;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+#score {
+    margin-bottom: 20px;
+}
+
+#result-message {
+    color: #fff;
+    background-color: #0056b3;
+    border-radius: 15px;
+    padding: 10px;
+    font-size: 45px;
+}
+
+#gol_menu_btn {
+    padding: 20px 10px;
+    font-size: 12px;
+    margin-top: 40px;
+    cursor: pointer;
+    border: none;
+    background-color: #e30000;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 0px 5px 0px 0px black;
+}
+
+#gol_menu_btn:hover{
+    opacity: 0.7;
+    box-shadow: 0px 0px 0px 0px;
+}

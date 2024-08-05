@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+* {
+    margin:0;padding:0;
+}
+
+html {
+    width: 100%;
+    overflow: hidden;
+    min-height:100%;
+}
+
+body {
+    background: url("https://quizplease.ru/img/logo-bg-2.png") 50% 50% no-repeat  rgba(153, 0, 255, 0.586);
+    background-size:100% auto;
+    background-color: #140650;
+    font-family: 'Montserrat', sans-serif; 
+}
+
+.wrapper {
+    padding:40px 0;
+    max-width:900px;
+    margin:0 auto;
+    min-height:90vh;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+}
+
+.container {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-wrap: wrap;
+}
+
+
+.input_field {
+    margin-right: 5px;
+    border-radius: 10px;
+    outline: 2px solid #FEBF00;
+    border: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #fff;
+    outline-offset: 3px;
+    padding: 30px 4rem;
+    transition: 0.25s;
+}
+  
+.input_field:focus {
+    outline-offset: 6px;
+    background-color: #fff
+}
+
+input::placeholder {
+    color: gray;
+    font-size: 20px;
+    text-align: center;  
+    border-radius: 15px;  
+}
+
+input[type="text"] {
+    font-size:20px;
+}
+
+#first-btn {
+    background-color: grey;
+    cursor: pointer;
+    padding: 35px;
+    box-sizing: border-box;
+    background-color: yellow;
+    border: 1px solid gray;
+    border-radius: 15px;
+    font-family: 'Montserrat', sans-serif; 
+    margin-left: .5em;
+}
+
+#second-btn {
+  cursor: pointer;
+  box-sizing: border-box;
+  border: 1px solid;
+  padding: 35px 45px;
+  border-radius: 15px;  
+  font-family: 'Montserrat', sans-serif; 
+  font-size: 20px;
+  background-color: yellow;
+  margin-top: 25%;
+  display:inline-block;
+}
+
+body.white-bg {
+    background-image:url("https://i.pinimg.com/originals/5b/6a/96/5b6a96440f667cd3b1bb5ab603ff11f1.gif");
+    background-color: white;
+    background-size:cover;
+    font-size: 40px;
+}
+
+.input_field.error {
+    border: 5px solid red;
+}
+
+.input_field.error:focus{
+    border-color: green;
+    color: green;
+}
+
+.input_field.error::placeholder {
+    color: red;
+}
+
+.input_field.error:focus::placeholder{
+    color: green;
+}
+
+h1 {
+    display: none;
+    color: white;
+    font-size: 70px;
+}
+
+/* From Uiverse.io by mrhyddenn */ 
+#second-btn,
+#first-btn {
+    position: relative;
+    padding: 30px 40px;
+    border-radius: 7px;
+    border: 2px solid yellow;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    background: transparent;
+    color: white;
+    overflow: hidden;
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+}
+  
+#second-btn:hover,
+#first-btn:hover {
+    color: black;
+    background: yellow;
+    box-shadow: 0 0 30px 5px rgba(236, 181, 0, 0.815);
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+}
+
+#second-btn:hover::before,
+#first-btn:hover::before {
+    -webkit-animation: sh02 0.5s 0s linear;
+    -moz-animation: sh02 0.5s 0s linear;
+    animation: sh02 0.5s 0s linear;
+}
+
+#second-btn::before,
+#first-btn::before {
+    content: '';
+    display: block;
+    width: 0px;
+    height: 86%;
+    position: absolute;
+    top: 7%;
+    left: 0%;
+    opacity: 0;
+    background: #fff;
+    box-shadow: 0 0 50px 30px #fff;
+    -webkit-transform: skewX(-20deg);
+    -moz-transform: skewX(-20deg);
+    -ms-transform: skewX(-20deg);
+    -o-transform: skewX(-20deg);
+    transform: skewX(-20deg);
+}
+  
+@keyframes sh02 {
+    from {
+        opacity: 0;
+        left: 0%;
+    }
+    50% {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        left: 100%;
+    }
+}
+
+#second-btn:active,
+#first-btn:active {
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: box-shadow 0.2s ease-in;
+    -moz-transition: box-shadow 0.2s ease-in;
+    transition: box-shadow 0.2s ease-in;
+}
+ 
