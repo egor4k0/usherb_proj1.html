@@ -22,87 +22,64 @@ const questions = [
 ];
 
 
-let currentQuestionIndex;
-let score;
-function shuffleQuestions() {
-    let currentIndex = questions.length;
-    while (currentIndex != 0) {
-        let randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex--;
-        [questions[randomIndex], questions[currentIndex]] = [questions[currentIndex], questions[randomIndex]];
-    }
-}
-
-function loadQuestion() {
-    if (currentQuestionIndex >= questions.length) {
-        showResult("Вы виграли" + " " + score + " " +"балів!" );
-        return;
-    }
-    const currentQuestion = questions[currentQuestionIndex];
-    document.getElementById('question').textContent = currentQuestion.question;
-    const answerElements = document.getElementsByClassName('answer');
-    for (let i = 0; i < answerElements.length; i++)
-        answerElements[i].textContent = currentQuestion.answers[i];
-}
-
-function checkAnswer(selectedIndex) {
-    const currentQuestion = questions[currentQuestionIndex];
-    if (selectedIndex === currentQuestion.correct) {
-        score += 10;
-        if (score > 200) {
-            showResult(`Вы виграли  ${score} балів`);
-            return;
-        }
-    }
-    currentQuestionIndex++;
-    document.getElementById('score').textContent = `Бали: ${score}`;
-    loadQuestion();
-}
-
-function showResult(message) {
-    clearTimeout(timeout)
-    document.getElementById('result-message').textContent = message;
-    document.querySelector('.result').style.display = 'flex';
-    document.querySelector('.question').style.display = 'none';
-    document.querySelector('.answers').style.display = 'none';
-}
-
-function restartGame() {
-    shuffleQuestions();
-    score = 0;
-    seconds = 59;
-    clearTimeout(timeout);
-    showTime();
-    currentQuestionIndex = 0;
-    document.getElementById('score').textContent = `Бали: 0`;
-    document.querySelector('.result').style.display = 'none';
-    document.querySelector('.question').style.display = 'block';
-    document.querySelector('.answers').style.display = 'flex';
-    loadQuestion();
-}
-
-function showTime(){
-    if (timer == null) showTime();
-    let str;
-    if (seconds<10) str = '0'+seconds;
-    else str = seconds;
-    timer.innerHTML = "00:" + str;
-    seconds--;
-    if(seconds < 0 && timeout != undefined) {
-        clearTimeout(timeout)
-        showResult(`Вы виграли  ${score} балів`);
-    }
-    else timeout = setTimeout(showTime,1000);
-}
-
+let currentQuestionIndex = 0;
+let score = 0;
 let seconds = 10;
 let timeout, timer;
 
-document.addEventListener('DOMContentLoaded', function() {
-    timer = document.getElementById('timer');
-    showTime();
- }, false);
+function shuffleQuestions() {
+  let currentIndex = questions.length;
+  while (currentIndex != 0) {
+    let randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+    [questions[randomIndex], questions[currentIndex]] = [
+      questions[currentIndex],
+      questions[randomIndex],
+    ];
+  }
+}
 
- function nagol_menu () {
-    location.href ="index3.html";
- }
+function loadQuestion() {
+  if (currentQuestionIndex >= questions.length) {
+    showResult("Вы виграли " + score + " балів!");
+    return;
+  }
+  const currentQuestion = questions[currentQuestionIndex];
+  document.getElementById("question").textContent = currentQuestion.question;
+  const answerElements = document.getElementsByClassName("answer");
+  for (let i = 0; i < answerElements.length; i++) {
+    answerElements[i].textContent = currentQuestion.answers[i];
+  }
+}
+
+function checkAnswer(selectedIndex) {
+  const currentQuestion = questions[currentQuestionIndex];
+  if (selectedIndex === currentQuestion.correct) {
+    score += 10;
+    if (score > 200) {
+      showResult(Вы виграли ${score} балів);
+      return;
+    }
+  }
+  currentQuestionIndex++;
+  document.getElementById("score").textContent = Бали: ${score};
+  loadQuestion();
+}
+
+function showResult(message) {
+  clearTimeout(timeout);
+  document.getElementById("result-message").textContent = message;
+  document.querySelector(".result").style.display = "flex";
+  document.querySelector(".question").style.display = "none";
+  document.querySelector(".answers").style.display = "none";
+}
+
+function restartGame() {
+  shuffleQuestions();
+  score = 0;
+  seconds = 59;
+  clearTimeout(timeout);
+  showTime();
+  currentQuestionIndex = 0;
+  document.getElementById("score").textContent = Бали: 0;
+  docum
