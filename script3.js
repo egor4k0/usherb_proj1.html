@@ -36,7 +36,7 @@ if (isCookieSaved) {
       inputField.classList.add("error");
       inputField.placeholder = "Введите имя";
     } else {
-      document.cookie = "user_name=" + inputField.value + ";max-age=604800";
+      document.cookie = `user_name=" ${inputField.value} + ";max-age=604800`;
       user_name = inputField.value;
       showWhiteBg();
       setTimeout(hideMessage, 2000);
